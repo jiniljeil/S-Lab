@@ -77,7 +77,7 @@ int main(void){
 			int follower_each = 0 ; 
 
 			for(int k = 0 ; k < users[idx]->follower_size; k++) { 
-				if (users[i]->follower[j] == users[idx]->follower[k]) { 
+				if (users[i]->id == users[idx]->follower[k]) { 
 					follower_each = 1; 
 					break; 
 				}
@@ -90,67 +90,70 @@ int main(void){
 		}
 		printf("Connecting: [%d/%d]\n", i, size);	
 	}
-	int connected_check = 1; 
-	int max_path = 0 ; 
-	int Long_X = 0 , Long_Y = 0 ;
 
 	for(int i = 0 ; i < size; i++) { 
-		int *distance = (int*)malloc(sizeof(int) * size);  
-		int *queue = (int*)malloc(sizeof(int) * 10000); 
-		int *queue_dist = (int*)malloc(sizeof(int) * 10000); 
- 		int q_size = 0, front = 0 ,tail = 0 ; 
-		
-		for(int j = 0 ; j < size; j++) distance[j] = INF; 
-		
-		distance[i] = 0; 
-		queue[tail] = i; queue_dist[tail] = 0 ; tail++; q_size++; 
-			
-		while(q_size > 0) { 
-			int curr_v = queue[front]; 
-			int curr_dist = queue_dist[front]; 
-			front++; 
-			q_size--;  // pop 
-		
-			if( distance[curr_v] < curr_dist ) continue; 
-			for(int j = 0 ; j < users[curr_v]->follower_size; j++) { 
-				int next_v = users[curr_v]->follower[j]; 
-				int nv = 0; 
-				for(int k = 0 ; k < size; k++) { 
-					if( next_v == users[k]->id){ 
-						nv = k;
-						break;	
+		printf("ID[%d]", users[i]->id); 
+		for(int j = 0 ; j < users[i]->follower_size; j++) { 
+			printf("%d ", users[i]->follower[j]); 
+		}
+		printf("\n");
+	}
+	int * friends = (int*)malloc(sizeof(int) * size);
+	memset(friends, 0, sizeof(friends));
+	int partition = 1 ;
+
+	int m = 0 ; 
+	for(int i = 0 ; i < size; i++) {
+		int c = 0 ; 
+		if( friends[i] == 0 ) {
+			int front = 0, tail = 0 ;
+			int * queue = (int*)malloc(sizeof(int) * 5000);
+			int q_size = 0 ;
+			friends[i] = partition; 
+			queue[tail++] = i; q_size++; 
+			c++; 
+			while(q_size > 0) { 
+				int curr_v = queue[front] ; 
+				front++; 
+				q_size--; 
+
+				for(int k = 0 ; k < users[curr_v]->follower_size; k++) {
+					int idx = find_user_idx( users[curr_v]->follower[k], size); 
+					if( !friends[idx] ) { 
+						queue[tail++] = idx; 
+						q_size++;
+						friends[idx] = partition;
+						c++; 
 					}
 				}
-				int next_w = 1; 
-			        if( distance[nv] > curr_dist + next_w) { 
-					distance[nv] =curr_dist + next_w; 
-					queue[tail] = nv; 
-					queue_dist[tail] = distance[nv]; 
-					tail++; q_size++;
-				}	
 			}
-		}	
-
-		int m = 0 ; 
-		int x = i; 
-		int y = 0 ; 
-		for(int i = 0; i < size; i++) { 
-			if( distance[i] == INF) { 
-				connected_check = 0; 
-				break; 
-			}	
+			partition++;
+			if( m < c) { 
+				m = c; 
+			}
+			free(queue) ;
 		}
-		//printf("Dijkstra Loading: [%d/%d]\n",i, size);  
-		free(queue); free(queue_dist);
-		free(distance);
-		if( !connected_check ) break;
 	}
-	
-	if( connected_check == 1 ) { 
+	partition--; // 마지막에 더한거 빼기
+	for(int i = 1 ; i <= partition ; i++) {
+		printf("GROUP[%d]: ", i);
+		for(int j = 0 ; j < size; j++) {
+			if( friends[j] == i) {
+				//printf("%d ", j);
+				printf("%d ", users[j]->id);
+			}
+		}
+		printf("\n");
+	}
+	printf("\n");
+	free(friends);
+	if( partition == 1 ) { 
 		printf("Connected: True\n");
 	}else{ 
 		printf("Connected: False\n");
 	}
+	printf("The number of vertex of the largest connected graph: %d\n",m );
+
 	for(int i = 0 ; i < size ;i++) { 
 		free(users[i]);
 	}	

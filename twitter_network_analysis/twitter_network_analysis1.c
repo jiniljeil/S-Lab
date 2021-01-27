@@ -8,7 +8,7 @@ typedef struct user {
 } USER; 
 
 USER * users [5128]; 
-
+char map[5128][300]; 
 int main(void){ 
 
 	FILE * fp = fopen("sample.txt", "r"); 
@@ -36,7 +36,6 @@ int main(void){
 				break; 
 			}
 		}
-		// printf("SIZE: %d\n", size); 		
 		// 새로운 유저 생성 
 		if( check == 0) { 
 			users[size] = (USER*)malloc(sizeof(USER)); 
@@ -61,7 +60,6 @@ int main(void){
 	}	
 
 	
-	
 	// followd users [1]  
 	int * arr = (int*)malloc(sizeof(int) * size); 
 	memset(arr, 0 ,sizeof(arr)) ;
@@ -84,10 +82,44 @@ int main(void){
 		}
 		printf("\n");
 	}*/
+
+	int ma= 0;
 	for(int i = 0 ; i < size; i++) { 
+		if( ma < users[i]->follower_size) { 
+			ma = users[i]->follower_size; 
+		}	
+	}
+
+	printf("MAX_VA: %d\n", ma); 
+	printf("Total Graph\n"); 
+	printf("############################################## Follower ##############################################\n");
+	int max = 0 ;
+	for(int i = 0 ; i < size; i++) {
+		if( users[i]->follower_size == 0 ){ 
+			map[i][users[i]->follower_size] = '*'; 
+		}else{ 
+			map[i][users[i]->follower_size-1] = '*'; 
+		}
+	}
+	for(int i = 0 ; i < size; i++) { 
+		for(int j = 0 ; j < 300;j++) { 
+			if(map[i][j] == '*') {
+				printf("%c",map[i][j]); 
+				if( users[i]->follower_size == 0 ) { 
+					printf(" <= ID[%d]: Follower(%d), Followee(%d)\n", users[i]->id, users[i]->follower_size, arr[i]);
+				}else{ 
+					printf(" <= ID[%d]: Follower(%d), Followee(%d)\n", users[i]->id, users[i]->follower_size - 1, arr[i]);
+				}
+				break; 
+			}else {
+				printf(" ");	
+			}
+		}	
+	}
+	/*for(int i = 0 ; i < size; i++) { 
 		printf("USER[%d]: ",users[i]->id); 
 		printf("%d | %d\n", users[i]->follower_size, arr[i]); 
-	}
+	}*/
 	for(int i = 0 ; i < size ;i++) { 
 		free(users[i]);
 	}	

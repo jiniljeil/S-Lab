@@ -83,45 +83,37 @@ int main(void){
 	for(int i = 0 ; i < size; i++) { 
 		if( friends[i] == 0 ) { 
 			int front = 0, tail = 0 ;
-			int * queue = (int*)malloc(sizeof(int) * 1000); 
+			int * queue = (int*)malloc(sizeof(int) * 5000); 
 			int q_size = 0 ; 
 			if ( users[i]->follower_size == 0 ) { // 그 자체로의 Partition  
 				friends[i] = partition; 
 				partition++;
+				continue;
 			}
-			for(int j = 0 ; j < users[i]->follower_size; j++){ 
-				int idx = find_user_idx( users[i]->follower[j], size);
-			       	
-				for(int k = 0 ; k < users[idx]->follower_size; k++){ 
-					if( !friends[find_user_idx(users[idx]->follower[k], size)] && 
-						!friends[find_user_idx(users[i]->id, size)] && users[idx]->follower[k] == users[i]->id ) { // 서로 연결된게 존재하는 경우. 
-						queue[tail++] = idx; q_size++;  
-                                        	friends[idx] = partition; 
-                                       	 	while(q_size > 0) { 
-                                                	int curr_v = queue[front] ; 
-                                                	front++ ;
-                                                	q_size--; 
+			queue[tail++] = i; q_size++;  
+                        friends[i] = partition; 
+                        while(q_size > 0) { 
+                        	int curr_v = queue[front] ; 
+                                front++ ;
+                                q_size--; 
 
-                                                	for(int k = 0 ; k < users[curr_v]->follower_size; k++) { 
-                                                        	int idx = find_user_idx( users[curr_v]->follower[k], size); 
-                                                        	int isfriend = 0 ; 
-                                                        	for(int p = 0 ; p < users[idx]->follower_size; p++){ 
-                                                                	if( users[idx]->follower[p] == users[curr_v]->id ) { 
-                                                                        	isfriend = 1; 
-                                                                        	break;
-                                                                	}
-                                                       		}
-                                                        	if( isfriend && !friends[idx] ){ 
-                                                               		queue[tail++] = idx;
-                                                                	//printf("IDX: %d\n",idx);      
-                                                                	friends[idx] = partition;
-                                                        	}
-                                               		}
-                                        	}
-						partition++;
+                                for(int k = 0 ; k < users[curr_v]->follower_size; k++) { 
+                                	int idx = find_user_idx( users[curr_v]->follower[k], size); 
+                                	int isfriend = 0 ; 
+                                	for(int p = 0 ; p < users[idx]->follower_size; p++){ 
+                                        	if( users[idx]->follower[p] == users[curr_v]->id ) { // 서로 연결된게 존재하는 경우.
+                                                	isfriend = 1; 
+                                                        break;
+                                                }
+                                        }
+                                	if( isfriend && !friends[idx] ){ 
+                                		queue[tail++] = idx;
+                                                friends[idx] = partition;
+                                                q_size++;
 					}
-				}	
-			}
+                              	}
+                	}
+			partition++;
 			free(queue) ; 	
 		}	
 	}
