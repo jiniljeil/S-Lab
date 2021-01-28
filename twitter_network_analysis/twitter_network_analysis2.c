@@ -9,7 +9,8 @@ typedef struct user {
 } USER; 
 
 USER * users [5128]; 
-
+int PATH[5128]; 
+int TEMP_PATH[5128]; 
 int main(void){ 
 
 	FILE * fp = fopen("sample.txt", "r"); 
@@ -66,14 +67,15 @@ int main(void){
 	int max_path = 0 ; 
 	int Long_X = 0 , Long_Y = 0 ;
 
-	for(int i = 0 ; i < size; i++) { 
+	for(int i = 0 ; i < size ; i++) { 
 		int *distance = (int*)malloc(sizeof(int) * size);  
 		int *queue = (int*)malloc(sizeof(int) * 2500); 
 		int *queue_dist = (int*)malloc(sizeof(int) * 2500); 
  		int q_size = 0, front = 0 ,tail = 0 ; 
-		
 		for(int j = 0 ; j < size; j++) distance[j] = INF; 
 		
+		memset(TEMP_PATH, 0 , sizeof(TEMP_PATH)); 
+
 		distance[i] = 0; 
 		queue[tail] = i; queue_dist[tail] = 0 ; tail++; q_size++; 
 	
@@ -97,6 +99,7 @@ int main(void){
 			        if( distance[nv] > curr_dist + next_w) { 
 					distance[nv] =curr_dist + next_w; 
 					queue[tail] = nv; 
+					TEMP_PATH[nv] = curr_v; 
 					queue_dist[tail] = distance[nv]; 
 					tail++; q_size++;
 				}	
@@ -106,23 +109,45 @@ int main(void){
 		int m = 0 ; 
 		int x = i; 
 		int y = 0 ; 
-		for(int i = 0; i < size; i++) { 
-			if( distance[i] != INF && distance[i] > m) { 
-				m = distance[i]; 
-				y = i ; 
+		for(int j = 0; j < size; j++) { 
+			if( distance[j] != INF && distance[j] > m) { 
+				m = distance[j]; 
+				y = j ; 
 			}
 		}
+		
 		if( m > max_path ){
 			max_path = m; 
 			Long_X = x; 
 			Long_Y = y; 	
+			for(int i = 0 ; i < size; i++) { 
+				PATH[i] = TEMP_PATH[i];	 
+			}
 		}
 		printf("Dijsktra Loading: [%d/%d]\n", i, size);
 		free(queue); free(queue_dist);
 		free(distance);
 	}
+	int trace[200]; 
+	int curr = 0 ; 
+	int end_point = Long_Y; 
+	int pp = 0 ; 
+	
+	while(end_point) { 
+		trace[pp++] = end_point;
+		end_point = PATH[end_point]; 
+	}
 
-	printf("USER_X:[%d], USER_Y:[%d]\n", users[Long_X]->id, users[Long_Y]->id); 
+	printf("PATH TRACE\n"); 
+	for(int i = pp - 1; i >= 0 ; i-- ){ 
+		if( i == 0 ) { 
+			printf("USER[%d]", users[trace[i]]->id);
+		}else{ 
+			printf("USER[%d]->", users[trace[i]]->id);  
+		}
+	}
+	printf("\n");
+	printf("USER_START:[%d], USER_END:[%d]\n", users[Long_X]->id, users[Long_Y]->id); 
 	printf("MAX PATH: %d\n", max_path);
 	for(int i = 0 ; i < size ;i++) { 
 		free(users[i]);

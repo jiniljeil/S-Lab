@@ -73,53 +73,42 @@ int main(void){
 			}	
 		}	
 	}
-
-	//printf("%d\n",size);
-	/*for(int i = 0 ; i < size; i++) {
-	       printf("USER[%d]", users[i]->id);	
-		for(int j = 0 ; j < users[i]->follower_size; j++) { 
-			printf("%d ", users[i]->follower[j]) ; 
-		}
-		printf("\n");
-	}*/
-
-	int ma= 0;
-	for(int i = 0 ; i < size; i++) { 
-		if( ma < users[i]->follower_size) { 
-			ma = users[i]->follower_size; 
-		}	
-	}
-
-	printf("MAX_VA: %d\n", ma); 
-	printf("Total Graph\n"); 
-	printf("############################################## Follower ##############################################\n");
-	int max = 0 ;
-	for(int i = 0 ; i < size; i++) {
-		if( users[i]->follower_size == 0 ){ 
-			map[i][users[i]->follower_size] = '*'; 
-		}else{ 
-			map[i][users[i]->follower_size-1] = '*'; 
-		}
-	}
-	for(int i = 0 ; i < size; i++) { 
-		for(int j = 0 ; j < 300;j++) { 
-			if(map[i][j] == '*') {
-				printf("%c",map[i][j]); 
-				if( users[i]->follower_size == 0 ) { 
-					printf(" <= ID[%d]: Follower(%d), Followee(%d)\n", users[i]->id, users[i]->follower_size, arr[i]);
-				}else{ 
-					printf(" <= ID[%d]: Follower(%d), Followee(%d)\n", users[i]->id, users[i]->follower_size - 1, arr[i]);
-				}
-				break; 
-			}else {
-				printf(" ");	
+	int range[11]; 
+	int range_followee[11]; 
+	memset(range, 0 , sizeof(range)) ;
+	memset(range_followee, 0 , sizeof(range_followee));
+	for(int i = 0 ; i < 11; i++) { 
+		for(int j = 0 ; j < size; j++) { 
+			if( users[j]->follower_size >= 100) { 
+				range[i]++; 
+			}else{ 
+				if( users[j]->follower_size >= 10 * i && users[j]->follower_size < 10 * (i+1)) { 
+					range[i]++; 
+				}	
 			}
-		}	
+		}
+	} 
+	
+	for(int i = 0 ; i < 11; i++) {
+                for(int j = 0 ; j < size; j++) {
+                        if( arr[j] >= 100) {
+                                range_followee[i]++;
+                        }else{
+                                if( arr[j] >= 10 * i && arr[j] < 10 * (i+1)) {
+                                        range_followee[i]++;
+                                }
+                        }
+                }
+        }
+	printf("######Twitter Users Histogram######\n");
+	printf(" Range  |  Follower  |  Followee  \n" ); 
+	for(int i = 0 ; i < 11; i++) { 
+		if( i == 10) { 
+			printf("%3d~    |    %4d    |  %5d\n", 10 *i, range[i], range_followee[i]); 
+		}else{ 
+			printf("%3d~%3d |    %4d    |  %5d\n", 10 *i, 10 * (i+1), range[i], range_followee[i]); 
+		}
 	}
-	/*for(int i = 0 ; i < size; i++) { 
-		printf("USER[%d]: ",users[i]->id); 
-		printf("%d | %d\n", users[i]->follower_size, arr[i]); 
-	}*/
 	for(int i = 0 ; i < size ;i++) { 
 		free(users[i]);
 	}	

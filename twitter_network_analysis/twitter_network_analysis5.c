@@ -104,7 +104,7 @@ int main(void){
 	double user_max[5] = {0,};
 	
 	int user[5] = {0, };
-
+	
 	for(int i = 0 ; i < 5; i++) { 
 		max = 0 ; 
 		for(int j = 0 ; j < size; j++) { 
