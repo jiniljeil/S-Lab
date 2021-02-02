@@ -1,0 +1,150 @@
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Document</title></head><body><pre><span style="color: green">package </span>Fall0811;</pre><pre><span style="color: green">import </span>java.util.Iterator;</pre><pre>
+</pre><pre><span style="color: green">public</span> <span style="color: green">class</span> <span style="color:blue">GenericList</span><E> <span style="color: green">implements</span> Iterable<E>{
+</pre><pre> <span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">class</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">constant</span><span style="color: #B0AD9C">
+</span></pre><pre>    <span style="color: green">private</span> <span style="color: green">static</span> <span style="color: green">final</span> <span style="color: red">int</span> DEFAULT_CAP = <span style="color: #3B8CFA">1</span><span style="color: #3B8CFA">0</span>;
+</pre><pre> 
+</pre><pre>    <span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">instance</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">variables</span><span style="color: #B0AD9C">
+</span></pre><pre>    <span style="color: green">protected</span> E[] container; <span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">the</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">array</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">is</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">NOT</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">the</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">list</span><span style="color: #B0AD9C">
+</span></pre><pre>    <span style="color: green">private</span> <span style="color: red">int</span> listSize;
+</pre><pre>    
+</pre><pre>    <span style="color: green">public</span> Iterator<E> <span style="color:blue">iterator</span>(){
+</pre><pre>        <span style="color: green">return</span> <span style="color: green">new</span> GenListIterator();
+</pre><pre>    }
+</pre><pre>    
+</pre><pre>    <span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">inner</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">class</span><span style="color: #B0AD9C">
+</span></pre><pre>    <span style="color: green">private</span> <span style="color: green">class</span> <span style="color:blue">GenListIterator</span> <span style="color: green">implements</span> Iterator<E>{
+</pre><pre>        <span style="color: green">private</span> <span style="color: red">int</span> indexOfNextElement;
+</pre><pre>        <span style="color: green">private</span> <span style="color: red">boolean</span> okToRemove;
+</pre><pre>        
+</pre><pre>        <span style="color: green">private</span> <span style="color:blue">GenListIterator</span>(){
+</pre><pre>            indexOfNextElement = <span style="color: #3B8CFA">0</span>;
+</pre><pre>            okToRemove = false;
+</pre><pre>        }
+</pre><pre>        
+</pre><pre>        <span style="color: green">public</span> <span style="color: red">boolean</span> <span style="color:blue">hasNext</span>(){
+</pre><pre>            <span style="color: green">return</span> indexOfNextElement < size();
+</pre><pre>        }
+</pre><pre>        
+</pre><pre>        <span style="color: green">public</span> E <span style="color:blue">next</span>(){
+</pre><pre>            <span style="color: green">assert</span> hasNext();
+</pre><pre>            okToRemove = <span style="color: green">true</span>;
+</pre><pre>            indexOfNextElement++;
+</pre><pre>            <span style="color: green">return</span> container[indexOfNextElement - <span style="color: #3B8CFA">1</span>];
+</pre><pre>        }
+</pre><pre>        
+</pre><pre>        <span style="color: green">public</span> <span style="color: red">void</span> <span style="color:blue">remove</span>(){
+</pre><pre>            <span style="color: green">assert</span> okToRemove;
+</pre><pre>            okToRemove = false;
+</pre><pre>            indexOfNextElement--;
+</pre><pre>            GenericList.<span style="color:orange">this</span>.<span style="color:orange">remove</span>(indexOfNextElement);
+</pre><pre>        }
+</pre><pre>        
+</pre><pre>    }
+</pre><pre>    
+</pre><pre>    <span style="color: green">public</span> <span style="color: red">boolean</span> <span style="color:blue">equals</span>(Object obj){
+</pre><pre>        <span style="color: green">assert</span> <span style="color: green">this</span> != null;
+</pre><pre>        <span style="color: green">if</span>(obj == null)
+</pre><pre>            <span style="color: green">return</span> false;
+</pre><pre>        <span style="color: green">else</span> <span style="color: green">if</span> (<span style="color: green">this</span> == obj)
+</pre><pre>            <span style="color: green">return</span> <span style="color: green">true</span>;
+</pre><pre>        <span style="color: green">else</span> <span style="color: green">if</span>( <span style="color: green">this</span>.<span style="color:orange">getClass</span>() != obj.<span style="color:orange">getClass</span>() )
+</pre><pre>            <span style="color: green">return</span> false;
+</pre><pre>        <span style="color: green">else</span>{
+</pre><pre>            <span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">obj</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">is</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">a</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">non</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">null</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">GenericList</span><span style="color: #B0AD9C">
+</span></pre><pre>            GenericList list = (GenericList)obj;
+</pre><pre>            <span style="color: green">if</span>( list.<span style="color:orange">size</span>() != size() )
+</pre><pre>                <span style="color: green">return</span> false;
+</pre><pre>            <span style="color: green">for</span>(<span style="color: red">int</span> i = <span style="color: #3B8CFA">0</span>; i < size(); i++)
+</pre><pre>                <span style="color: green">if</span>( (get(i) == null && list.<span style="color:orange">get</span>(i) != null) || !get(i).<span style="color:orange">equals</span>(list.<span style="color:orange">get</span>(i)) )
+</pre><pre>                    <span style="color: green">return</span> false;
+</pre><pre>            <span style="color: green">return</span> <span style="color: green">true</span>;
+</pre><pre>        }
+</pre><pre>        
+</pre><pre>            
+</pre><pre>    }
+</pre><pre>    
+</pre><pre>
+</pre><pre>    <span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">creates</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">an</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">empty</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">IntList</span><span style="color: #B0AD9C">
+</span></pre><pre>    <span style="color: green">public</span> <span style="color:blue">GenericList</span>(){
+</pre><pre>        <span style="color: green">this</span>(DEFAULT_CAP);
+</pre><pre>    }
+</pre><pre>
+</pre><pre>    <span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">pre</span><span style="color: #B0AD9C">:</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">initialCap</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">></span><span style="color: #B0AD9C">=</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">0</span><span style="color: #B0AD9C">
+</span></pre><pre>    <span style="color: green">public</span> <span style="color:blue">GenericList</span>(<span style="color: red">int</span> initialCap){
+</pre><pre>        <span style="color: green">assert</span> initialCap >= <span style="color: #3B8CFA">0</span> : <span style="color: #FA6109">&#34;</span><span style="color:#FA6109">failed</span><span style="color: #FA6109"> </span><span style="color:#FA6109">precondition</span><span style="color: #FA6109">&#34;</span>;
+</pre><pre>        container = (E[])(<span style="color: green">new</span> Object[initialCap]);
+</pre><pre>        listSize = <span style="color: #3B8CFA">0</span>;        
+</pre><pre>    }
+</pre><pre>    
+</pre><pre>    <span style="color: green">public</span> <span style="color: red">void</span> <span style="color:blue">insertAll</span>(<span style="color: red">int</span> pos, GenericList<E> otherList){
+</pre><pre>        
+</pre><pre>        <span style="color: green">for</span>(<span style="color: red">int</span> i = <span style="color: #3B8CFA">0</span>; i < otherList.<span style="color:orange">listSize</span>; i++){
+</pre><pre>            <span style="color: green">this</span>.<span style="color:orange">insert</span>(pos + i, otherList.<span style="color:orange">container</span>[i]);
+</pre><pre>        }
+</pre><pre>    }
+</pre><pre>    
+</pre><pre>    <span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">pre</span><span style="color: #B0AD9C">:</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">0</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C"><</span><span style="color: #B0AD9C">=</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">pos</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C"><</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">size</span><span style="color: #B0AD9C">(</span><span style="color: #B0AD9C">)</span><span style="color: #B0AD9C">
+</span></pre><pre>    <span style="color: green">public</span> E <span style="color:blue">remove</span>(<span style="color: red">int</span> pos){
+</pre><pre>        E result = container[pos];
+</pre><pre>        listSize--;
+</pre><pre>        <span style="color: green">for</span>(<span style="color: red">int</span> index = pos; index < <span style="color:blue">size</span>(); index++){
+</pre><pre>            container[index] = container[index + <span style="color: #3B8CFA">1</span>];
+</pre><pre>        }
+</pre><pre>        container[listSize] = null;
+</pre><pre>        <span style="color: green">return</span> result;
+</pre><pre>    }
+</pre><pre>    
+</pre><pre>    <span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">pre</span><span style="color: #B0AD9C">:</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">0</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C"><</span><span style="color: #B0AD9C">=</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">pos</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C"><</span><span style="color: #B0AD9C">=</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">size</span><span style="color: #B0AD9C">(</span><span style="color: #B0AD9C">)</span><span style="color: #B0AD9C">
+</span></pre><pre>    <span style="color: green">public</span> <span style="color: red">void</span> <span style="color:blue">insert</span>(<span style="color: red">int</span> pos, E element){
+</pre><pre>        <span style="color: green">assert</span> <span style="color: #3B8CFA">0</span> <= pos && pos <= size();
+</pre><pre>        <span style="color: green">if</span>( size() == container.<span style="color:orange">length</span> )
+</pre><pre>            resize();
+</pre><pre>        <span style="color: green">for</span>(<span style="color: red">int</span> index = <span style="color:blue">size</span>(); index > pos; index--){
+</pre><pre>            <span style="color: green">assert</span> index > <span style="color: #3B8CFA">0</span>;
+</pre><pre>            container[index] = container[index - <span style="color: #3B8CFA">1</span>];
+</pre><pre>        }
+</pre><pre>        container[pos] = element;
+</pre><pre>        listSize++;
+</pre><pre>    }
+</pre><pre>    
+</pre><pre>    <span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">get</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">size</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">of</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">list</span><span style="color: #B0AD9C">
+</span></pre><pre>    <span style="color: green">public</span> <span style="color: red">int</span> <span style="color:blue">size</span>(){
+</pre><pre>        <span style="color: green">return</span> listSize;
+</pre><pre>    }
+</pre><pre>    
+</pre><pre>    <span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">access</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">elements</span><span style="color: #B0AD9C">
+</span></pre><pre>    <span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">pre</span><span style="color: #B0AD9C">:</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">0</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C"><</span><span style="color: #B0AD9C">=</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">position</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C"><</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">size</span><span style="color: #B0AD9C">(</span><span style="color: #B0AD9C">)</span><span style="color: #B0AD9C">
+</span></pre><pre>    <span style="color: green">public</span> E <span style="color:blue">get</span>(<span style="color: red">int</span> position){
+</pre><pre>        <span style="color: green">assert</span> <span style="color: #3B8CFA">0</span> <= position && position < size();
+</pre><pre>        <span style="color: green">return</span> container[position];
+</pre><pre>    }
+</pre><pre>    
+</pre><pre>    <span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">pre</span><span style="color: #B0AD9C">:</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">none</span><span style="color: #B0AD9C">
+</span></pre><pre>    <span style="color: green">public</span> <span style="color: red">void</span> <span style="color:blue">add</span>(E element){    
+</pre><pre>        insert(size(), element);
+</pre><pre>    }
+</pre><pre>
+</pre><pre>    <span style="color: green">private</span> <span style="color: red">void</span> <span style="color:blue">resize</span>() {
+</pre><pre>        E[] temp = (E[])(<span style="color: green">new</span> Object[container.<span style="color:orange">length</span> <span style="color: #B0AD9C">&#42;</span> <span style="color: #3B8CFA">2</span> + <span style="color: #3B8CFA">1</span>]);
+</pre><pre>        System.<span style="color:orange">arraycopy</span>(container, <span style="color: #3B8CFA">0</span>, temp, <span style="color: #3B8CFA">0</span>, size());
+</pre><pre>        container = temp;
+</pre><pre>    }
+</pre><pre>    
+</pre><pre>    <span style="color: green">public</span> String <span style="color:blue">toString</span>(){
+</pre><pre>        StringBuffer result = <span style="color: green">new</span> StringBuffer(<span style="color: #FA6109">&#34;</span><span style="color: #FA6109">[</span><span style="color: #FA6109">&#34;</span>);
+</pre><pre>        <span style="color: green">final</span> <span style="color: red">int</span> LIMIT = size() - <span style="color: #3B8CFA">1</span>;
+</pre><pre>        <span style="color: green">for</span>(<span style="color: red">int</span> i = <span style="color: #3B8CFA">0</span>; i < LIMIT; i++){
+</pre><pre>            <span style="color: green">if</span>( <span style="color: green">this</span> == <span style="color: green">this</span>.<span style="color:orange">get</span>(i) )
+</pre><pre>                result.<span style="color:orange">append</span>(<span style="color: #FA6109">&#34;</span><span style="color:#FA6109">this</span><span style="color: #FA6109"> </span><span style="color:#FA6109">list</span><span style="color: #FA6109">&#34;</span>);
+</pre><pre>            <span style="color: green">else</span>{
+</pre><pre>                result.<span style="color:orange">append</span>(get(i));
+</pre><pre>            }
+</pre><pre>            result.<span style="color:orange">append</span>(<span style="color: #FA6109">&#34;</span><span style="color: #FA6109">,</span><span style="color: #FA6109"> </span><span style="color: #FA6109">&#34;</span>);
+</pre><pre>        }
+</pre><pre>        <span style="color: green">if</span>( size() != <span style="color: #3B8CFA">0</span>)
+</pre><pre>            result.<span style="color:orange">append</span>(get(size() - <span style="color: #3B8CFA">1</span>));
+</pre><pre>        result.<span style="color:orange">append</span>(<span style="color: #FA6109">&#34;</span><span style="color: #FA6109">]</span><span style="color: #FA6109">&#34;</span>);
+</pre><pre>        <span style="color: green">return</span> result.<span style="color:orange">toString</span>();
+</pre><pre>    }
+</pre><pre>   
+</pre><pre>}</pre>

@@ -1,0 +1,15 @@
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Document</title></head><body><pre><span style="color:green">public</span> <span style="color:green">class</span> <span style="color:blue">Factorial</span>
+</pre><pre>{
+</pre><pre>	<span style="color:green">public</span> <span style="color:green">static</span> <span style="color:red">void</span> <span style="color:blue">main</span>(String[] args)
+</pre><pre>	{	<span style="color:green">final</span> <span style="color:red">int</span> NUM_FACTS = 100;
+</pre><pre>		<span style="color:green">for</span>(<span style="color:red">int</span> i = 0; i < NUM_FACTS; i++)
+</pre><pre>			System.<span style="color:orange">out</span>.<span style="color:orange">println</span>( i + <span style="color: orange">&#34;</span>! <span style="color:#FA6109">is</span> <span style="color: orange">&#34;</span> + <span style="color:#FA6109">factorial</span>(<span style="color:#FA6109">i</span>));
+</pre><pre>	}
+</pre><pre>	
+</pre><pre>	<span style="color:green">public</span> <span style="color:green">static</span> <span style="color:red">int</span> <span style="color:blue">factorial</span>(<span style="color:red">int</span> n)
+</pre><pre>	{	<span style="color:red">int</span> result = 1;
+</pre><pre>		<span style="color:green">for</span>(<span style="color:red">int</span> i = 2; i <= n; i++)
+</pre><pre>			result <span style="color: #B0AD9C">&#42;</span>= i;
+</pre><pre>		<span style="color:green">return</span> result;
+</pre><pre>	}
+</pre><pre>}</pre>

@@ -1,0 +1,52 @@
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Document</title></head><body><pre><span style="color: green">public</span> <span style="color: green">class</span> <span style="color:blue">BinaryConverter</span> {
+</pre><pre>    
+</pre><pre>    <span style="color: green">public</span> <span style="color: green">static</span> <span style="color: red">void</span> <span style="color:blue">main</span>(String[] args){
+</pre><pre>        <span style="color: green">for</span>(<span style="color: red">int</span> i = -<span style="color: #3B8CFA">5</span>; i < <span style="color: #3B8CFA">3</span><span style="color: #3B8CFA">3</span>; i++){
+</pre><pre>            System.<span style="color:orange">out</span>.<span style="color:orange">println</span>(i + <span style="color: #FA6109">&#34;</span><span style="color: #FA6109">:</span><span style="color: #FA6109"> </span><span style="color: #FA6109">&#34;</span> + toBinary(i));
+</pre><pre>            System.<span style="color:orange">out</span>.<span style="color:orange">println</span>(i);
+</pre><pre>            <span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#47;</span><span style="color:#B0AD9C">always</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">another</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">way</span><span style="color: #B0AD9C">
+</span></pre><pre>            System.<span style="color:orange">out</span>.<span style="color:orange">println</span>(i + <span style="color: #FA6109">&#34;</span><span style="color: #FA6109">:</span><span style="color: #FA6109"> </span><span style="color: #FA6109">&#34;</span> + Integer.<span style="color:orange">toBinaryString</span>(i));
+</pre><pre>        }
+</pre><pre>    }
+</pre><pre>    
+</pre><pre>    <span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">pre</span><span style="color: #B0AD9C">:</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">none</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">post</span><span style="color: #B0AD9C">:</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">returns</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">a</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">String</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">with</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">base</span><span style="color: #B0AD9C">1</span><span style="color: #B0AD9C">0</span><span style="color:#B0AD9C">Num</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">in</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">base</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">2</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">&#47;</span>
+</pre><pre>    <span style="color: green">public</span> <span style="color: green">static</span> String <span style="color:blue">toBinary</span>(<span style="color: red">int</span> base10Num){
+</pre><pre>        <span style="color: red">boolean</span> isNeg = base10Num < <span style="color: #3B8CFA">0</span>;
+</pre><pre>        base10Num = Math.<span style="color:orange">abs</span>(base10Num);        
+</pre><pre>        String result = <span style="color: #FA6109">&#34;</span><span style="color: #FA6109">&#34;</span>;
+</pre><pre>        
+</pre><pre>        <span style="color: green">while</span>(base10Num > <span style="color: #3B8CFA">1</span>){
+</pre><pre>            <span style="color:blue">result</span> = (base10Num % <span style="color: #3B8CFA">2</span>) + result;
+</pre><pre>            base10Num <span style="color: #B0AD9C">&#47;</span>= <span style="color: #3B8CFA">2</span>;
+</pre><pre>        }
+</pre><pre>        <span style="color: green">assert</span> base10Num == <span style="color: #3B8CFA">0</span> || base10Num == <span style="color: #3B8CFA">1</span> : <span style="color: #FA6109">&#34;</span><span style="color:#FA6109">value</span><span style="color: #FA6109"> </span><span style="color:#FA6109">is</span><span style="color: #FA6109"> </span><span style="color:#FA6109">not</span><span style="color: #FA6109"> </span><span style="color: #FA6109"><</span><span style="color: #FA6109">=</span><span style="color: #FA6109"> </span><span style="color: #FA6109">1</span><span style="color: #FA6109">:</span><span style="color: #FA6109"> </span><span style="color: #FA6109">&#34;</span> + base10Num;
+</pre><pre>        
+</pre><pre>        result = base10Num + result;
+</pre><pre>        <span style="color: green">assert</span> all0sAnd1s(result);
+</pre><pre>        
+</pre><pre>        <span style="color: green">if</span>( isNeg )
+</pre><pre>            result = <span style="color: #FA6109">&#34;</span><span style="color: #FA6109">-</span><span style="color: #FA6109">&#34;</span> + result;
+</pre><pre>        <span style="color: green">return</span> result;
+</pre><pre>    }
+</pre><pre>    
+</pre><pre>    <span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">pre</span><span style="color: #B0AD9C">:</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">cal</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">!</span><span style="color: #B0AD9C">=</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">null</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">post</span><span style="color: #B0AD9C">:</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">return</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">true</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">if</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">val</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">consists</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">only</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">of</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">characters</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">1</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">and</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">0</span><span style="color: #B0AD9C">,</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">false</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">otherwise</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">&#47;</span>
+</pre><pre>    <span style="color: green">public</span> <span style="color: green">static</span> <span style="color: red">boolean</span> all0sAnd1s(String val){
+</pre><pre>        <span style="color: green">assert</span> val != null : <span style="color: #FA6109">&#34;</span><span style="color:#FA6109">Failed</span><span style="color: #FA6109"> </span><span style="color:#FA6109">precondition</span><span style="color: #FA6109"> </span><span style="color:#FA6109">all</span><span style="color: #FA6109">0</span><span style="color:#FA6109">sAnd</span><span style="color: #FA6109">1</span><span style="color:#FA6109">s</span><span style="color: #FA6109">.</span><span style="color: #FA6109"> </span><span style="color:#FA6109">parameter</span><span style="color: #FA6109"> </span><span style="color:#FA6109">cannot</span><span style="color: #FA6109"> </span><span style="color:#FA6109">be</span><span style="color: #FA6109"> </span><span style="color:#FA6109">null</span><span style="color: #FA6109">&#34;</span>;
+</pre><pre>        <span style="color: red">boolean</span> all = <span style="color: green">true</span>;
+</pre><pre>        <span style="color: red">int</span> i = <span style="color: #3B8CFA">0</span>;
+</pre><pre>        <span style="color: red">char</span> c;
+</pre><pre>        
+</pre><pre>        <span style="color: green">while</span>(all && i < val.<span style="color:orange">length</span>()){
+</pre><pre>            c = val.<span style="color:orange">charAt</span>(i);
+</pre><pre>            all = c == <span style="color: #FA6109">&#39;</span><span style="color: #FA6109">0</span><span style="color: #FA6109">&#39;</span> || c == <span style="color: #FA6109">&#39;</span><span style="color: #FA6109">1</span><span style="color: #FA6109">&#39;</span>;
+</pre><pre>            i++;
+</pre><pre>        }
+</pre><pre>        <span style="color: green">return</span> all;
+</pre><pre>    }
+</pre><pre>}</pre>

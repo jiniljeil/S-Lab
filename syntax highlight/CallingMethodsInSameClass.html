@@ -1,0 +1,23 @@
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Document</title></head><body><pre><span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">CallingMethodsInSameClass</span><span style="color: #B0AD9C">.</span><span style="color:#B0AD9C">java</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">illustrates</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">how</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">to</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">call</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">static</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">methods</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">a</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">class</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">from</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">a</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">method</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">in</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">the</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">same</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">class</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">&#47;</span>
+</pre><pre>
+</pre><pre><span style="color:green">public</span> <span style="color:green">class</span> <span style="color:blue">CallingMethodsInSameClass</span>
+</pre><pre>{
+</pre><pre>	<span style="color:green">public</span> <span style="color:green">static</span> <span style="color:red">void</span> <span style="color:blue">main</span>(String[] args) {
+</pre><pre>		printOne();
+</pre><pre>		printOne();
+</pre><pre>		printTwo();
+</pre><pre>	}
+</pre><pre>
+</pre><pre>	<span style="color:green">public</span> <span style="color:green">static</span> <span style="color:red">void</span> <span style="color:blue">printOne</span>() {
+</pre><pre>		System.<span style="color:orange">out</span>.<span style="color:orange">println</span>(<span style="color: #FA6109">&#34;</span><span style="color:#FA6109">Hello</span> <span style="color:#FA6109">World</span><span style="color: #FA6109">&#34;</span>);
+</pre><pre>	}
+</pre><pre>
+</pre><pre>	<span style="color:green">public</span> <span style="color:green">static</span> <span style="color:red">void</span> <span style="color:blue">printTwo</span>() {
+</pre><pre>		printOne();
+</pre><pre>		printOne();
+</pre><pre>	}
+</pre><pre>}</pre>

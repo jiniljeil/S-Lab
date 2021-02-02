@@ -1,0 +1,151 @@
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Document</title></head><body><pre><span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#47;</span><span style="color:#B0AD9C">Mike</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">Scott</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#47;</span><span style="color:#B0AD9C">examples</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">of</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">array</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">manipulations</span><span style="color: #B0AD9C">
+</span></pre><pre>
+</pre><pre><span style="color: green">public</span> <span style="color: green">class</span> <span style="color:blue">ArrayExamples</span>
+</pre><pre>{	<span style="color: green">public</span> <span style="color: green">static</span> <span style="color: red">void</span> <span style="color:blue">main</span>(String[] args)
+</pre><pre>	{	<span style="color: red">int</span>[] list = {<span style="color: #3B8CFA">1</span>, <span style="color: #3B8CFA">2</span>, <span style="color: #3B8CFA">3</span>, <span style="color: #3B8CFA">4</span>, <span style="color: #3B8CFA">1</span>, <span style="color: #3B8CFA">2</span>, <span style="color: #3B8CFA">3</span>};
+</pre><pre>		findAndPrintPairs(list, <span style="color: #3B8CFA">5</span>);
+</pre><pre>		bubblesort(list);
+</pre><pre>		showList(list);
+</pre><pre>
+</pre><pre>		list = <span style="color: green">new</span> <span style="color: red">int</span>[]{ <span style="color: #3B8CFA">1</span>, <span style="color: #3B8CFA">2</span>, <span style="color: #3B8CFA">3</span>, <span style="color: #3B8CFA">4</span>, <span style="color: #3B8CFA">5</span>, <span style="color: #3B8CFA">6</span>, <span style="color: #3B8CFA">7</span>, <span style="color: #3B8CFA">8</span>, <span style="color: #3B8CFA">9</span>, <span style="color: #3B8CFA">1</span><span style="color: #3B8CFA">0</span>, <span style="color: #3B8CFA">1</span><span style="color: #3B8CFA">1</span>};
+</pre><pre>		bubblesort(list);
+</pre><pre>		showList(list);
+</pre><pre>
+</pre><pre>		list = <span style="color: green">new</span> <span style="color: red">int</span>[]{<span style="color: #3B8CFA">1</span><span style="color: #3B8CFA">1</span>, <span style="color: #3B8CFA">1</span><span style="color: #3B8CFA">0</span>, <span style="color: #3B8CFA">9</span>, <span style="color: #3B8CFA">8</span>, <span style="color: #3B8CFA">7</span>, <span style="color: #3B8CFA">6</span>, <span style="color: #3B8CFA">5</span>, <span style="color: #3B8CFA">4</span>, <span style="color: #3B8CFA">3</span>, <span style="color: #3B8CFA">2</span>, <span style="color: #3B8CFA">1</span>, <span style="color: #3B8CFA">0</span>, -<span style="color: #3B8CFA">1</span>, -<span style="color: #3B8CFA">2</span>};
+</pre><pre>		bubblesort(list);
+</pre><pre>		showList(list);
+</pre><pre>
+</pre><pre>		list = <span style="color: green">new</span> <span style="color: red">int</span>[]{<span style="color: #3B8CFA">1</span>};
+</pre><pre>		bubblesort(list);
+</pre><pre>		showList(list);
+</pre><pre>	}
+</pre><pre>
+</pre><pre>
+</pre><pre>	<span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">pre</span><span style="color: #B0AD9C">:</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">list</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">!</span><span style="color: #B0AD9C">=</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">null</span><span style="color: #B0AD9C">,</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">list</span><span style="color: #B0AD9C">.</span><span style="color:#B0AD9C">length</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">></span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">0</span><span style="color: #B0AD9C">
+</span></pre><pre>	<span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">post</span><span style="color: #B0AD9C">:</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">return</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">index</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">of</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">minimum</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">element</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">of</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">array</span><span style="color: #B0AD9C">
+</span></pre><pre>	<span style="color: green">public</span> <span style="color: green">static</span> <span style="color: red">int</span> <span style="color:blue">findMin</span>(<span style="color: red">int</span>[] list)
+</pre><pre>	{	<span style="color: green">assert</span> list != null && list.<span style="color:orange">length</span> > <span style="color: #3B8CFA">0</span> : <span style="color: #FA6109">&#34;</span><span style="color:#FA6109">failed</span><span style="color: #FA6109"> </span><span style="color:#FA6109">precondition</span><span style="color: #FA6109">&#34;</span>;
+</pre><pre>
+</pre><pre>		<span style="color: red">int</span> indexOfMin = <span style="color: #3B8CFA">0</span>;
+</pre><pre>		<span style="color: green">for</span>(<span style="color: red">int</span> i = <span style="color: #3B8CFA">1</span>; i < list.<span style="color:orange">length</span>; i++)
+</pre><pre>		{	<span style="color: green">if</span>(list[i] < list[indexOfMin])
+</pre><pre>			{	indexOfMin = i;
+</pre><pre>			}
+</pre><pre>		}
+</pre><pre>
+</pre><pre>		<span style="color: green">return</span> indexOfMin;
+</pre><pre>	}
+</pre><pre>
+</pre><pre>
+</pre><pre>	<span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C">	</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">&#42;</span><span style="color:#B0AD9C">pre</span><span style="color: #B0AD9C">:</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">list</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">!</span><span style="color: #B0AD9C">=</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">null</span><span style="color: #B0AD9C">,</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">newSize</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">></span><span style="color: #B0AD9C">=</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">0</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C">	</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">&#42;</span><span style="color:#B0AD9C">post</span><span style="color: #B0AD9C">:</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">nothing</span><span style="color: #B0AD9C">.</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">the</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">method</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">does</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">not</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">succeed</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">it</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">resizing</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">the</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C">	</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">argument</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C">	</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">&#47;</span>
+</pre><pre>	<span style="color: green">public</span> <span style="color: green">static</span> <span style="color: red">void</span> <span style="color:blue">badResize</span>(<span style="color: red">int</span>[] list, <span style="color: red">int</span> newSize)
+</pre><pre>	{	<span style="color: green">assert</span> list != null && newSize >= <span style="color: #3B8CFA">0</span> : <span style="color: #FA6109">&#34;</span><span style="color:#FA6109">failed</span><span style="color: #FA6109"> </span><span style="color:#FA6109">precondition</span><span style="color: #FA6109">&#34;</span>;
+</pre><pre>
+</pre><pre>		<span style="color: red">int</span>[] temp = <span style="color: green">new</span> <span style="color: red">int</span>[newSize];
+</pre><pre>		<span style="color: red">int</span> limit = Math.<span style="color:orange">min</span>(list.<span style="color:orange">length</span>, newSize);
+</pre><pre>
+</pre><pre>		<span style="color: green">for</span>(<span style="color: red">int</span> i = <span style="color: #3B8CFA">0</span>; i < limit; i++)
+</pre><pre>		{	temp[i] = list[i];
+</pre><pre>		}
+</pre><pre>
+</pre><pre>		<span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">uh</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">oh</span><span style="color: #B0AD9C">!</span><span style="color: #B0AD9C">!</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">Changing</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">pointer</span><span style="color: #B0AD9C">,</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">not</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">pointee</span><span style="color: #B0AD9C">.</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">This</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">breaks</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">the</span><span style="color: #B0AD9C">
+</span></pre><pre>		<span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">relationship</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">between</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">the</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">parameter</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">and</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">argument</span><span style="color: #B0AD9C">
+</span></pre><pre>		list = temp;
+</pre><pre>	}
+</pre><pre>
+</pre><pre>
+</pre><pre>	<span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C">	</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">&#42;</span><span style="color:#B0AD9C">pre</span><span style="color: #B0AD9C">:</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">list</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">!</span><span style="color: #B0AD9C">=</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">null</span><span style="color: #B0AD9C">,</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">newSize</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">></span><span style="color: #B0AD9C">=</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">0</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C">	</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">&#42;</span><span style="color:#B0AD9C">post</span><span style="color: #B0AD9C">:</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">returns</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">an</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">array</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">of</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">size</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">newSize</span><span style="color: #B0AD9C">.</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">Elements</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">from</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">0</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">to</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">newSize</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">-</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">1</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C">	</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">	</span><span style="color:#B0AD9C">will</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">be</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">copied</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">into</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">the</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">new</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">array</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C">	</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">&#47;</span>
+</pre><pre>	<span style="color: green">public</span> <span style="color: green">static</span> <span style="color: red">int</span>[] <span style="color:blue">goodResize</span>(<span style="color: red">int</span>[] list, <span style="color: red">int</span> newSize)
+</pre><pre>	{	<span style="color: green">assert</span> list != null && newSize >= <span style="color: #3B8CFA">0</span> : <span style="color: #FA6109">&#34;</span><span style="color:#FA6109">failed</span><span style="color: #FA6109"> </span><span style="color:#FA6109">precondition</span><span style="color: #FA6109">&#34;</span>;
+</pre><pre>
+</pre><pre>		<span style="color: red">int</span>[] result = <span style="color: green">new</span> <span style="color: red">int</span>[newSize];
+</pre><pre>		<span style="color: red">int</span> limit = Math.<span style="color:orange">min</span>(list.<span style="color:orange">length</span>, newSize);
+</pre><pre>
+</pre><pre>		<span style="color: green">for</span>(<span style="color: red">int</span> i = <span style="color: #3B8CFA">0</span>; i < limit; i++)
+</pre><pre>		{	result[i] = list[i];
+</pre><pre>		}
+</pre><pre>
+</pre><pre>		<span style="color: green">return</span> result;
+</pre><pre>	}
+</pre><pre>
+</pre><pre>
+</pre><pre>	<span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C">	</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">&#42;</span><span style="color:#B0AD9C">pre</span><span style="color: #B0AD9C">:</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">list</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">!</span><span style="color: #B0AD9C">=</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">null</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C">	</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">&#42;</span><span style="color:#B0AD9C">post</span><span style="color: #B0AD9C">:</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">prints</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">out</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">the</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">indices</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">and</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">values</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">of</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">all</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">pairs</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">of</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">numbers</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C">	</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">&#42;</span><span style="color:#B0AD9C">in</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">list</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">such</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">that</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">list</span><span style="color: #B0AD9C">[</span><span style="color:#B0AD9C">a</span><span style="color: #B0AD9C">]</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">+</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">list</span><span style="color: #B0AD9C">[</span><span style="color:#B0AD9C">b</span><span style="color: #B0AD9C">]</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">=</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">target</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C">	</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">&#47;</span>
+</pre><pre>	<span style="color: green">public</span> <span style="color: green">static</span> <span style="color: red">void</span> <span style="color:blue">findAndPrintPairs</span>(<span style="color: red">int</span>[] list, <span style="color: red">int</span> target)
+</pre><pre>	{	<span style="color: green">assert</span> list != null : <span style="color: #FA6109">&#34;</span><span style="color:#FA6109">failed</span><span style="color: #FA6109"> </span><span style="color:#FA6109">precondition</span><span style="color: #FA6109">&#34;</span>;
+</pre><pre>
+</pre><pre>		<span style="color: green">for</span>(<span style="color: red">int</span> i = <span style="color: #3B8CFA">0</span>; i < list.<span style="color:orange">length</span>; i++)
+</pre><pre>		{	<span style="color: green">for</span>(<span style="color: red">int</span> j = i + <span style="color: #3B8CFA">1</span>; j < list.<span style="color:orange">length</span>; j++)
+</pre><pre>			{	<span style="color: green">if</span>(list[i] + list[j] == target)
+</pre><pre>				{	System.<span style="color:orange">out</span>.<span style="color:orange">println</span>(<span style="color: #FA6109">&#34;</span><span style="color:#FA6109">The</span><span style="color: #FA6109"> </span><span style="color:#FA6109">two</span><span style="color: #FA6109"> </span><span style="color:#FA6109">elements</span><span style="color: #FA6109"> </span><span style="color:#FA6109">at</span><span style="color: #FA6109"> </span><span style="color:#FA6109">indices</span><span style="color: #FA6109"> </span><span style="color: #FA6109">&#34;</span> + i + <span style="color: #FA6109">&#34;</span><span style="color: #FA6109"> </span><span style="color:#FA6109">and</span><span style="color: #FA6109"> </span><span style="color: #FA6109">&#34;</span> + j
+</pre><pre>						+ <span style="color: #FA6109">&#34;</span><span style="color: #FA6109"> </span><span style="color:#FA6109">are</span><span style="color: #FA6109"> </span><span style="color: #FA6109">&#34;</span> + list[i] + <span style="color: #FA6109">&#34;</span><span style="color: #FA6109"> </span><span style="color:#FA6109">and</span><span style="color: #FA6109"> </span><span style="color: #FA6109">&#34;</span> + list[j] + <span style="color: #FA6109">&#34;</span><span style="color: #FA6109"> </span><span style="color:#FA6109">add</span><span style="color: #FA6109"> </span><span style="color:#FA6109">up</span><span style="color: #FA6109"> </span><span style="color:#FA6109">to</span><span style="color: #FA6109"> </span><span style="color: #FA6109">&#34;</span> + target);
+</pre><pre>				}
+</pre><pre>			}
+</pre><pre>		}
+</pre><pre>	}
+</pre><pre>
+</pre><pre>
+</pre><pre>	<span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C">	</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">&#42;</span><span style="color:#B0AD9C">pre</span><span style="color: #B0AD9C">:</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">list</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">!</span><span style="color: #B0AD9C">=</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">null</span><span style="color: #B0AD9C">;</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C">	</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">&#42;</span><span style="color:#B0AD9C">post</span><span style="color: #B0AD9C">:</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">sort</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">the</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">elements</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">of</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">list</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">so</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">that</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">they</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">are</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">in</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">ascending</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">order</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C">	</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">&#47;</span>
+</pre><pre>	<span style="color: green">public</span> <span style="color: green">static</span> <span style="color: red">void</span> <span style="color:blue">bubblesort</span>(<span style="color: red">int</span>[] list)
+</pre><pre>	{
+</pre><pre>		<span style="color: green">assert</span> list != null : <span style="color: #FA6109">&#34;</span><span style="color:#FA6109">failed</span><span style="color: #FA6109"> </span><span style="color:#FA6109">precondition</span><span style="color: #FA6109">&#34;</span>;
+</pre><pre>
+</pre><pre>		<span style="color: red">int</span> temp;
+</pre><pre>		<span style="color: red">boolean</span> changed = <span style="color: green">true</span>;
+</pre><pre>		<span style="color: green">for</span>(<span style="color: red">int</span> i = <span style="color: #3B8CFA">0</span>; i < list.<span style="color:orange">length</span> && changed; i++)
+</pre><pre>		{	changed = false;
+</pre><pre>			<span style="color: green">for</span>(<span style="color: red">int</span> j = <span style="color: #3B8CFA">0</span>; j < list.<span style="color:orange">length</span> - i - <span style="color: #3B8CFA">1</span>; j++)
+</pre><pre>			{	<span style="color: green">assert</span> (j > <span style="color: #3B8CFA">0</span>) && (j + <span style="color: #3B8CFA">1</span> < list.<span style="color:orange">length</span>) : <span style="color: #FA6109">&#34;</span><span style="color:#FA6109">loop</span><span style="color: #FA6109"> </span><span style="color:#FA6109">counter</span><span style="color: #FA6109"> </span><span style="color:#FA6109">j</span><span style="color: #FA6109"> </span><span style="color: #FA6109">&#34;</span> + j +
+</pre><pre>					<span style="color: #FA6109">&#34;</span><span style="color:#FA6109">is</span><span style="color: #FA6109"> </span><span style="color:#FA6109">out</span><span style="color: #FA6109"> </span><span style="color:#FA6109">of</span><span style="color: #FA6109"> </span><span style="color:#FA6109">bounds</span><span style="color: #FA6109">.</span><span style="color: #FA6109">&#34;</span>;
+</pre><pre>				<span style="color: green">if</span>(list[j] > list[j+<span style="color: #3B8CFA">1</span>])
+</pre><pre>				{	changed = <span style="color: green">true</span>;
+</pre><pre>					temp = list[j + <span style="color: #3B8CFA">1</span>];
+</pre><pre>					list[j + <span style="color: #3B8CFA">1</span>] = list[j];
+</pre><pre>					list[j] = temp;
+</pre><pre>				}
+</pre><pre>			}
+</pre><pre>		}
+</pre><pre>
+</pre><pre>		<span style="color: green">assert</span> isAscending( list );
+</pre><pre>	}
+</pre><pre>
+</pre><pre>
+</pre><pre>	<span style="color: green">public</span> <span style="color: green">static</span> <span style="color: red">void</span> <span style="color:blue">showList</span>(<span style="color: red">int</span>[] list)
+</pre><pre>	{	<span style="color: green">for</span>(<span style="color: red">int</span> i = <span style="color: #3B8CFA">0</span>; i < list.<span style="color:orange">length</span>; i++)
+</pre><pre>			System.<span style="color:orange">out</span>.<span style="color:orange">print</span>( list[i] + <span style="color: #FA6109">&#34;</span><span style="color: #FA6109"> </span><span style="color: #FA6109">&#34;</span> );
+</pre><pre>		System.<span style="color:orange">out</span>.<span style="color:orange">println</span>();
+</pre><pre>	}
+</pre><pre>
+</pre><pre>	<span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">	</span><span style="color:#B0AD9C">pre</span><span style="color: #B0AD9C">:</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">list</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">!</span><span style="color: #B0AD9C">=</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">null</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C">	</span><span style="color: #B0AD9C">	</span><span style="color:#B0AD9C">post</span><span style="color: #B0AD9C">:</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">return</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">true</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">if</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">list</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">is</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">sorted</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">in</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">ascedning</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">order</span><span style="color: #B0AD9C">,</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">false</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">otherwise</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C">	</span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">&#47;</span>
+</pre><pre>	<span style="color: green">public</span> <span style="color: green">static</span> <span style="color: red">boolean</span> <span style="color:blue">isAscending</span>( <span style="color: red">int</span>[] list )
+</pre><pre>	{	<span style="color: red">boolean</span> ascending = <span style="color: green">true</span>;
+</pre><pre>		<span style="color: red">int</span> index = <span style="color: #3B8CFA">1</span>;
+</pre><pre>		<span style="color: green">while</span>( ascending && index < list.<span style="color:orange">length</span> )
+</pre><pre>		{	<span style="color: green">assert</span> index >= <span style="color: #3B8CFA">0</span> && index < list.<span style="color:orange">length</span>;
+</pre><pre>
+</pre><pre>			ascending = (list[index - <span style="color: #3B8CFA">1</span>] <= list[index]);
+</pre><pre>			index++;
+</pre><pre>		}
+</pre><pre>
+</pre><pre>		<span style="color: green">return</span> ascending;
+</pre><pre>	}
+</pre><pre>}
+</pre><pre>}
+</pre>

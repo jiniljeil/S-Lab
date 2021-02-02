@@ -1,0 +1,42 @@
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Document</title></head><body><pre><span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">A</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">class</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">to</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">measure</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">time</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">elapsed</span><span style="color: #B0AD9C">.</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">&#47;</span>
+</pre><pre>
+</pre><pre><span style="color: green">public</span> <span style="color: green">class</span> <span style="color:blue">Stopwatch</span>
+</pre><pre>{
+</pre><pre>    <span style="color: green">private</span> <span style="color: red">long</span> startTime;
+</pre><pre>    <span style="color: green">private</span> <span style="color: red">long</span> stopTime;
+</pre><pre>
+</pre><pre>    <span style="color: green">public</span> <span style="color: green">static</span> <span style="color: green">final</span> <span style="color: red">double</span> NANOS_PER_SEC = <span style="color: #3B8CFA">1</span><span style="color: #3B8CFA">0</span><span style="color: #3B8CFA">0</span><span style="color: #3B8CFA">0</span><span style="color: #3B8CFA">0</span><span style="color: #3B8CFA">0</span><span style="color: #3B8CFA">0</span><span style="color: #3B8CFA">0</span><span style="color: #3B8CFA">0</span><span style="color: #3B8CFA">0</span>.<span style="color: #3B8CFA">0</span>;
+</pre><pre>
+</pre><pre>	<span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C">	</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">start</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">the</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">stop</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">watch</span><span style="color: #B0AD9C">.</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C">	</span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">&#47;</span>
+</pre><pre>	<span style="color: green">public</span> <span style="color: red">void</span> <span style="color:blue">start</span>(){
+</pre><pre>		startTime = System.<span style="color:orange">nanoTime</span>();
+</pre><pre>	}
+</pre><pre>
+</pre><pre>	<span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C">	</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">stop</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">the</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">stop</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">watch</span><span style="color: #B0AD9C">.</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C">	</span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">&#47;</span>
+</pre><pre>	<span style="color: green">public</span> <span style="color: red">void</span> <span style="color:blue">stop</span>()
+</pre><pre>	{	stopTime = System.<span style="color:orange">nanoTime</span>();	}
+</pre><pre>
+</pre><pre>	<span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C">	</span><span style="color:#B0AD9C">elapsed</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">time</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">in</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">seconds</span><span style="color: #B0AD9C">.</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C">	</span><span style="color: #B0AD9C">@</span><span style="color:#B0AD9C">return</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">the</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">time</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">recorded</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">on</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">the</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">stopwatch</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">in</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">seconds</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C">	</span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">&#47;</span>
+</pre><pre>	<span style="color: green">public</span> <span style="color: red">double</span> <span style="color:blue">time</span>()
+</pre><pre>	{	<span style="color: green">return</span> (stopTime - startTime) <span style="color: #B0AD9C">&#47;</span> NANOS_PER_SEC;	}
+</pre><pre>
+</pre><pre>	<span style="color: green">public</span> String <span style="color:blue">toString</span>(){
+</pre><pre>	    <span style="color: green">return</span> <span style="color: #FA6109">&#34;</span><span style="color:#FA6109">elapsed</span><span style="color: #FA6109"> </span><span style="color:#FA6109">time</span><span style="color: #FA6109">:</span><span style="color: #FA6109"> </span><span style="color: #FA6109">&#34;</span> + time() + <span style="color: #FA6109">&#34;</span><span style="color: #FA6109"> </span><span style="color:#FA6109">seconds</span><span style="color: #FA6109">.</span><span style="color: #FA6109">&#34;</span>;
+</pre><pre>	}
+</pre><pre>
+</pre><pre>	<span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C">	</span><span style="color:#B0AD9C">elapsed</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">time</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">in</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">nanoseconds</span><span style="color: #B0AD9C">.</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C">	</span><span style="color: #B0AD9C">@</span><span style="color:#B0AD9C">return</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">the</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">time</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">recorded</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">on</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">the</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">stopwatch</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">in</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">nanoseconds</span><span style="color: #B0AD9C">
+</span></pre><pre><span style="color: #B0AD9C">	</span><span style="color: #B0AD9C">&#42;</span><span style="color: #B0AD9C">&#47;</span>
+</pre><pre>	<span style="color: green">public</span> <span style="color: red">long</span> <span style="color:blue">timeInNanoseconds</span>()
+</pre><pre>	{	<span style="color: green">return</span> (stopTime - startTime);	}
+</pre><pre>}</pre>

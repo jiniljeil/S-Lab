@@ -1,0 +1,44 @@
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Document</title></head><body><pre><span style="color:green">import</span> java.<span style="color:orange">util</span>.<span style="color:orange">LinkedList</span>;
+</pre><pre><span style="color:green">import</span> java.<span style="color:orange">lang</span>.<span style="color:orange">reflect</span>.<span style="color:orange">Array</span>;
+</pre><pre>
+</pre><pre><span style="color:green">public</span> <span style="color:green">class</span> <span style="color:blue">UnsortedHashSet</span><E> {
+</pre><pre>   
+</pre><pre>    <span style="color:green">private</span> <span style="color:green">static</span> <span style="color:green">final</span> <span style="color:red">double</span> LOAD_FACTOR_LIMIT = 0.7;
+</pre><pre>    
+</pre><pre>    <span style="color:green">private</span> <span style="color:red">int</span> size;
+</pre><pre>    <span style="color:green">private</span> LinkedList<E>[] con;
+</pre><pre>    
+</pre><pre>    <span style="color:green">public</span> <span style="color:blue">UnsortedHashSet</span>() {
+</pre><pre>        <span style="color:blue">con</span>  = (LinkedList<E>[])(<span style="color:green">new</span> LinkedList[10]);
+</pre><pre>    }
+</pre><pre>    
+</pre><pre>    <span style="color:green">public</span> <span style="color:red">boolean</span> <span style="color:blue">add</span>(E obj) {
+</pre><pre>        <span style="color:red">int</span> oldSize = size;
+</pre><pre>        <span style="color:red">int</span> index = Math.<span style="color:orange">abs</span>(obj.<span style="color:orange">hashCode</span>()) % con.<span style="color:orange">length</span>;
+</pre><pre>        <span style="color:green">if</span>(con[index] == null)
+</pre><pre>            con[index] = <span style="color:green">new</span> LinkedList<E>();
+</pre><pre>        <span style="color:green">if</span>(!con[index].<span style="color:orange">contains</span>(obj)) {
+</pre><pre>            con[index].<span style="color:orange">add</span>(obj);
+</pre><pre>            size++;
+</pre><pre>            
+</pre><pre>        }
+</pre><pre>        <span style="color:green">if</span>(1.0 <span style="color: #B0AD9C">&#42;</span> <span style="color:orange">size</span> <span style="color: #B0AD9C">&#47;</span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">con</span><span style="color: #B0AD9C">.</span><span style="color:#B0AD9C">length</span><span style="color: #B0AD9C"> </span><span style="color: #B0AD9C">></span><span style="color: #B0AD9C"> </span><span style="color:#B0AD9C">LOAD</span><span style="color: #B0AD9C">_</span><span style="color:#B0AD9C">FACTOR</span><span style="color: #B0AD9C">_</span><span style="color:#B0AD9C">LIMIT</span><span style="color: #B0AD9C">)</span><span style="color: #B0AD9C">
+</span></pre><pre>            <span style="color:blue">resize</span>();
+</pre><pre>        <span style="color:green">return</span> oldSize != size;
+</pre><pre>    }
+</pre><pre>
+</pre><pre>    <span style="color:green">private</span> <span style="color:red">void</span> <span style="color:blue">resize</span>() {
+</pre><pre>        UnsortedHashSet<E> temp = <span style="color:green">new</span> UnsortedHashSet<E>();
+</pre><pre>        temp.<span style="color:orange">con</span> = (LinkedList<E>[])(<span style="color:green">new</span> LinkedList[con.<span style="color:orange">length</span> <span style="color: #B0AD9C">&#42;</span> 2 + 1]);
+</pre><pre>        <span style="color:green">for</span>(<span style="color:red">int</span> i = 0; i < con.<span style="color:orange">length</span>; <span style="color:orange">i</span>++){
+</pre><pre>            <span style="color:green">if</span>(con[i] != null)
+</pre><pre>                <span style="color:green">for</span>(E e : con[i])
+</pre><pre>                    temp.<span style="color:orange">add</span>(e);
+</pre><pre>        }
+</pre><pre>        con = temp.<span style="color:orange">con</span>;
+</pre><pre>    }
+</pre><pre>    
+</pre><pre>    <span style="color:green">public</span> <span style="color:red">int</span> <span style="color:blue">size</span>() {
+</pre><pre>        <span style="color:green">return</span> size;
+</pre><pre>    }
+</pre><pre>}</pre>
