@@ -17,12 +17,12 @@
 $
 
 # Command Line History (newest to oldest):
+:wq
+|2,0,1617279358,,"wq"
 :q
 |2,0,1617279124,,"q"
 :set number
 |2,0,1617278950,,"set number"
-:wq
-|2,0,1617275351,,"wq"
 :Q
 |2,0,1617270971,,"Q"
 :w
@@ -187,38 +187,60 @@ $
 |3,0,36,0,1,0,1617114959,"}"
 
 # File marks:
-'0  227  18  ~/OperatingSystem/hw2/pctest.c
-|4,48,227,18,1617279124,"~/OperatingSystem/hw2/pctest.c"
-'1  109  18  ~/OperatingSystem/hw2/pctest.c
-|4,49,109,18,1617275351,"~/OperatingSystem/hw2/pctest.c"
+'0  3  3  ~/OperatingSystem/hw2/README.md
+|4,48,3,3,1617279358,"~/OperatingSystem/hw2/README.md"
+'1  227  18  ~/OperatingSystem/hw2/pctest.c
+|4,49,227,18,1617279124,"~/OperatingSystem/hw2/pctest.c"
 '2  109  18  ~/OperatingSystem/hw2/pctest.c
 |4,50,109,18,1617275351,"~/OperatingSystem/hw2/pctest.c"
-'3  12  0  ~/OperatingSystem/hw2/wrong_odd.c
-|4,51,12,0,1617270994,"~/OperatingSystem/hw2/wrong_odd.c"
-'4  9  22  ~/OperatingSystem/hw2/crash_code.c
-|4,52,9,22,1617270972,"~/OperatingSystem/hw2/crash_code.c"
-'5  295  0  ~/OperatingSystem/hw2/pctest.c
-|4,53,295,0,1617270966,"~/OperatingSystem/hw2/pctest.c"
-'6  296  0  ~/OperatingSystem/hw2/pctest.c
-|4,54,296,0,1617270966,"~/OperatingSystem/hw2/pctest.c"
-'7  295  0  ~/OperatingSystem/hw2/pctest.c
-|4,55,295,0,1617270966,"~/OperatingSystem/hw2/pctest.c"
-'8  296  0  ~/OperatingSystem/hw2/pctest.c
-|4,56,296,0,1617270966,"~/OperatingSystem/hw2/pctest.c"
-'9  260  52  ~/OperatingSystem/hw2/pctest.c
-|4,57,260,52,1617260272,"~/OperatingSystem/hw2/pctest.c"
+'3  109  18  ~/OperatingSystem/hw2/pctest.c
+|4,51,109,18,1617275351,"~/OperatingSystem/hw2/pctest.c"
+'4  12  0  ~/OperatingSystem/hw2/wrong_odd.c
+|4,52,12,0,1617270994,"~/OperatingSystem/hw2/wrong_odd.c"
+'5  9  22  ~/OperatingSystem/hw2/crash_code.c
+|4,53,9,22,1617270972,"~/OperatingSystem/hw2/crash_code.c"
+'6  295  0  ~/OperatingSystem/hw2/pctest.c
+|4,54,295,0,1617270966,"~/OperatingSystem/hw2/pctest.c"
+'7  296  0  ~/OperatingSystem/hw2/pctest.c
+|4,55,296,0,1617270966,"~/OperatingSystem/hw2/pctest.c"
+'8  295  0  ~/OperatingSystem/hw2/pctest.c
+|4,56,295,0,1617270966,"~/OperatingSystem/hw2/pctest.c"
+'9  296  0  ~/OperatingSystem/hw2/pctest.c
+|4,57,296,0,1617270966,"~/OperatingSystem/hw2/pctest.c"
 
 # Jumplist (newest first):
+-'  3  3  ~/OperatingSystem/hw2/README.md
+|4,39,3,3,1617279358,"~/OperatingSystem/hw2/README.md"
+-'  48  0  ~/OperatingSystem/hw2/README.md
+|4,39,48,0,1617279342,"~/OperatingSystem/hw2/README.md"
+-'  227  18  ~/OperatingSystem/hw2/pctest.c
+|4,39,227,18,1617279124,"~/OperatingSystem/hw2/pctest.c"
 -'  227  18  ~/OperatingSystem/hw2/pctest.c
 |4,39,227,18,1617279124,"~/OperatingSystem/hw2/pctest.c"
 -'  109  18  ~/OperatingSystem/hw2/pctest.c
 |4,39,109,18,1617278948,"~/OperatingSystem/hw2/pctest.c"
+-'  109  18  ~/OperatingSystem/hw2/pctest.c
+|4,39,109,18,1617278948,"~/OperatingSystem/hw2/pctest.c"
+-'  109  18  ~/OperatingSystem/hw2/pctest.c
+|4,39,109,18,1617275351,"~/OperatingSystem/hw2/pctest.c"
 -'  109  18  ~/OperatingSystem/hw2/pctest.c
 |4,39,109,18,1617275351,"~/OperatingSystem/hw2/pctest.c"
 -'  295  0  ~/OperatingSystem/hw2/pctest.c
 |4,39,295,0,1617274172,"~/OperatingSystem/hw2/pctest.c"
 -'  295  0  ~/OperatingSystem/hw2/pctest.c
 |4,39,295,0,1617274172,"~/OperatingSystem/hw2/pctest.c"
+-'  295  0  ~/OperatingSystem/hw2/pctest.c
+|4,39,295,0,1617274172,"~/OperatingSystem/hw2/pctest.c"
+-'  295  0  ~/OperatingSystem/hw2/pctest.c
+|4,39,295,0,1617274172,"~/OperatingSystem/hw2/pctest.c"
+-'  12  0  ~/OperatingSystem/hw2/wrong_odd.c
+|4,39,12,0,1617270994,"~/OperatingSystem/hw2/wrong_odd.c"
+-'  12  0  ~/OperatingSystem/hw2/wrong_odd.c
+|4,39,12,0,1617270994,"~/OperatingSystem/hw2/wrong_odd.c"
+-'  12  0  ~/OperatingSystem/hw2/wrong_odd.c
+|4,39,12,0,1617270994,"~/OperatingSystem/hw2/wrong_odd.c"
+-'  12  0  ~/OperatingSystem/hw2/wrong_odd.c
+|4,39,12,0,1617270994,"~/OperatingSystem/hw2/wrong_odd.c"
 -'  12  0  ~/OperatingSystem/hw2/wrong_odd.c
 |4,39,12,0,1617270994,"~/OperatingSystem/hw2/wrong_odd.c"
 -'  12  0  ~/OperatingSystem/hw2/wrong_odd.c
@@ -243,6 +265,32 @@ $
 |4,39,9,22,1617270972,"~/OperatingSystem/hw2/crash_code.c"
 -'  9  22  ~/OperatingSystem/hw2/crash_code.c
 |4,39,9,22,1617270972,"~/OperatingSystem/hw2/crash_code.c"
+-'  9  22  ~/OperatingSystem/hw2/crash_code.c
+|4,39,9,22,1617270972,"~/OperatingSystem/hw2/crash_code.c"
+-'  9  22  ~/OperatingSystem/hw2/crash_code.c
+|4,39,9,22,1617270972,"~/OperatingSystem/hw2/crash_code.c"
+-'  9  22  ~/OperatingSystem/hw2/crash_code.c
+|4,39,9,22,1617270972,"~/OperatingSystem/hw2/crash_code.c"
+-'  9  22  ~/OperatingSystem/hw2/crash_code.c
+|4,39,9,22,1617270972,"~/OperatingSystem/hw2/crash_code.c"
+-'  9  22  ~/OperatingSystem/hw2/crash_code.c
+|4,39,9,22,1617270972,"~/OperatingSystem/hw2/crash_code.c"
+-'  9  22  ~/OperatingSystem/hw2/crash_code.c
+|4,39,9,22,1617270972,"~/OperatingSystem/hw2/crash_code.c"
+-'  9  22  ~/OperatingSystem/hw2/crash_code.c
+|4,39,9,22,1617270972,"~/OperatingSystem/hw2/crash_code.c"
+-'  9  22  ~/OperatingSystem/hw2/crash_code.c
+|4,39,9,22,1617270972,"~/OperatingSystem/hw2/crash_code.c"
+-'  296  0  ~/OperatingSystem/hw2/pctest.c
+|4,39,296,0,1617270966,"~/OperatingSystem/hw2/pctest.c"
+-'  296  0  ~/OperatingSystem/hw2/pctest.c
+|4,39,296,0,1617270966,"~/OperatingSystem/hw2/pctest.c"
+-'  296  0  ~/OperatingSystem/hw2/pctest.c
+|4,39,296,0,1617270966,"~/OperatingSystem/hw2/pctest.c"
+-'  296  0  ~/OperatingSystem/hw2/pctest.c
+|4,39,296,0,1617270966,"~/OperatingSystem/hw2/pctest.c"
+-'  296  0  ~/OperatingSystem/hw2/pctest.c
+|4,39,296,0,1617270966,"~/OperatingSystem/hw2/pctest.c"
 -'  296  0  ~/OperatingSystem/hw2/pctest.c
 |4,39,296,0,1617270966,"~/OperatingSystem/hw2/pctest.c"
 -'  296  0  ~/OperatingSystem/hw2/pctest.c
@@ -267,6 +315,32 @@ $
 |4,39,261,52,1617269293,"~/OperatingSystem/hw2/pctest.c"
 -'  261  52  ~/OperatingSystem/hw2/pctest.c
 |4,39,261,52,1617269293,"~/OperatingSystem/hw2/pctest.c"
+-'  260  52  ~/OperatingSystem/hw2/pctest.c
+|4,39,260,52,1617269293,"~/OperatingSystem/hw2/pctest.c"
+-'  261  52  ~/OperatingSystem/hw2/pctest.c
+|4,39,261,52,1617269293,"~/OperatingSystem/hw2/pctest.c"
+-'  260  52  ~/OperatingSystem/hw2/pctest.c
+|4,39,260,52,1617269293,"~/OperatingSystem/hw2/pctest.c"
+-'  261  52  ~/OperatingSystem/hw2/pctest.c
+|4,39,261,52,1617269293,"~/OperatingSystem/hw2/pctest.c"
+-'  261  52  ~/OperatingSystem/hw2/pctest.c
+|4,39,261,52,1617269293,"~/OperatingSystem/hw2/pctest.c"
+-'  261  52  ~/OperatingSystem/hw2/pctest.c
+|4,39,261,52,1617269293,"~/OperatingSystem/hw2/pctest.c"
+-'  261  52  ~/OperatingSystem/hw2/pctest.c
+|4,39,261,52,1617269293,"~/OperatingSystem/hw2/pctest.c"
+-'  262  26  ~/OperatingSystem/hw2/pctest.c
+|4,39,262,26,1617260272,"~/OperatingSystem/hw2/pctest.c"
+-'  261  26  ~/OperatingSystem/hw2/pctest.c
+|4,39,261,26,1617260272,"~/OperatingSystem/hw2/pctest.c"
+-'  262  26  ~/OperatingSystem/hw2/pctest.c
+|4,39,262,26,1617260272,"~/OperatingSystem/hw2/pctest.c"
+-'  262  26  ~/OperatingSystem/hw2/pctest.c
+|4,39,262,26,1617260272,"~/OperatingSystem/hw2/pctest.c"
+-'  262  26  ~/OperatingSystem/hw2/pctest.c
+|4,39,262,26,1617260272,"~/OperatingSystem/hw2/pctest.c"
+-'  262  26  ~/OperatingSystem/hw2/pctest.c
+|4,39,262,26,1617260272,"~/OperatingSystem/hw2/pctest.c"
 -'  262  26  ~/OperatingSystem/hw2/pctest.c
 |4,39,262,26,1617260272,"~/OperatingSystem/hw2/pctest.c"
 -'  261  26  ~/OperatingSystem/hw2/pctest.c
@@ -301,6 +375,28 @@ $
 |4,39,247,8,1617260228,"~/OperatingSystem/hw2/pctest.c"
 -'  247  8  ~/OperatingSystem/hw2/pctest.c
 |4,39,247,8,1617260228,"~/OperatingSystem/hw2/pctest.c"
+-'  246  8  ~/OperatingSystem/hw2/pctest.c
+|4,39,246,8,1617260228,"~/OperatingSystem/hw2/pctest.c"
+-'  247  8  ~/OperatingSystem/hw2/pctest.c
+|4,39,247,8,1617260228,"~/OperatingSystem/hw2/pctest.c"
+-'  246  8  ~/OperatingSystem/hw2/pctest.c
+|4,39,246,8,1617260228,"~/OperatingSystem/hw2/pctest.c"
+-'  247  8  ~/OperatingSystem/hw2/pctest.c
+|4,39,247,8,1617260228,"~/OperatingSystem/hw2/pctest.c"
+-'  247  8  ~/OperatingSystem/hw2/pctest.c
+|4,39,247,8,1617260228,"~/OperatingSystem/hw2/pctest.c"
+-'  247  8  ~/OperatingSystem/hw2/pctest.c
+|4,39,247,8,1617260228,"~/OperatingSystem/hw2/pctest.c"
+-'  247  8  ~/OperatingSystem/hw2/pctest.c
+|4,39,247,8,1617260228,"~/OperatingSystem/hw2/pctest.c"
+-'  247  8  ~/OperatingSystem/hw2/pctest.c
+|4,39,247,8,1617260228,"~/OperatingSystem/hw2/pctest.c"
+-'  247  8  ~/OperatingSystem/hw2/pctest.c
+|4,39,247,8,1617260228,"~/OperatingSystem/hw2/pctest.c"
+-'  247  8  ~/OperatingSystem/hw2/pctest.c
+|4,39,247,8,1617260228,"~/OperatingSystem/hw2/pctest.c"
+-'  247  8  ~/OperatingSystem/hw2/pctest.c
+|4,39,247,8,1617260228,"~/OperatingSystem/hw2/pctest.c"
 -'  244  35  ~/OperatingSystem/hw2/pctest.c
 |4,39,244,35,1617260227,"~/OperatingSystem/hw2/pctest.c"
 -'  245  35  ~/OperatingSystem/hw2/pctest.c
@@ -313,104 +409,87 @@ $
 |4,39,245,35,1617260227,"~/OperatingSystem/hw2/pctest.c"
 -'  245  35  ~/OperatingSystem/hw2/pctest.c
 |4,39,245,35,1617260227,"~/OperatingSystem/hw2/pctest.c"
--'  245  35  ~/OperatingSystem/hw2/pctest.c
-|4,39,245,35,1617260227,"~/OperatingSystem/hw2/pctest.c"
--'  245  35  ~/OperatingSystem/hw2/pctest.c
-|4,39,245,35,1617260227,"~/OperatingSystem/hw2/pctest.c"
--'  245  35  ~/OperatingSystem/hw2/pctest.c
-|4,39,245,35,1617260227,"~/OperatingSystem/hw2/pctest.c"
--'  245  35  ~/OperatingSystem/hw2/pctest.c
-|4,39,245,35,1617260227,"~/OperatingSystem/hw2/pctest.c"
--'  245  35  ~/OperatingSystem/hw2/pctest.c
-|4,39,245,35,1617260227,"~/OperatingSystem/hw2/pctest.c"
--'  178  8  ~/OperatingSystem/hw2/pctest.c
-|4,39,178,8,1617260223,"~/OperatingSystem/hw2/pctest.c"
--'  179  8  ~/OperatingSystem/hw2/pctest.c
-|4,39,179,8,1617260223,"~/OperatingSystem/hw2/pctest.c"
--'  178  8  ~/OperatingSystem/hw2/pctest.c
-|4,39,178,8,1617260223,"~/OperatingSystem/hw2/pctest.c"
--'  179  8  ~/OperatingSystem/hw2/pctest.c
-|4,39,179,8,1617260223,"~/OperatingSystem/hw2/pctest.c"
--'  179  8  ~/OperatingSystem/hw2/pctest.c
-|4,39,179,8,1617260223,"~/OperatingSystem/hw2/pctest.c"
--'  179  8  ~/OperatingSystem/hw2/pctest.c
-|4,39,179,8,1617260223,"~/OperatingSystem/hw2/pctest.c"
--'  179  8  ~/OperatingSystem/hw2/pctest.c
-|4,39,179,8,1617260223,"~/OperatingSystem/hw2/pctest.c"
--'  179  8  ~/OperatingSystem/hw2/pctest.c
-|4,39,179,8,1617260223,"~/OperatingSystem/hw2/pctest.c"
--'  179  8  ~/OperatingSystem/hw2/pctest.c
-|4,39,179,8,1617260223,"~/OperatingSystem/hw2/pctest.c"
--'  179  8  ~/OperatingSystem/hw2/pctest.c
-|4,39,179,8,1617260223,"~/OperatingSystem/hw2/pctest.c"
--'  179  8  ~/OperatingSystem/hw2/pctest.c
-|4,39,179,8,1617260223,"~/OperatingSystem/hw2/pctest.c"
--'  154  10  ~/OperatingSystem/hw2/pctest.c
-|4,39,154,10,1617260220,"~/OperatingSystem/hw2/pctest.c"
--'  148  5  ~/OperatingSystem/hw2/pctest.c
-|4,39,148,5,1617260220,"~/OperatingSystem/hw2/pctest.c"
--'  155  10  ~/OperatingSystem/hw2/pctest.c
-|4,39,155,10,1617260220,"~/OperatingSystem/hw2/pctest.c"
--'  149  5  ~/OperatingSystem/hw2/pctest.c
-|4,39,149,5,1617260220,"~/OperatingSystem/hw2/pctest.c"
--'  154  10  ~/OperatingSystem/hw2/pctest.c
-|4,39,154,10,1617260220,"~/OperatingSystem/hw2/pctest.c"
--'  148  5  ~/OperatingSystem/hw2/pctest.c
-|4,39,148,5,1617260220,"~/OperatingSystem/hw2/pctest.c"
--'  155  10  ~/OperatingSystem/hw2/pctest.c
-|4,39,155,10,1617260220,"~/OperatingSystem/hw2/pctest.c"
--'  149  5  ~/OperatingSystem/hw2/pctest.c
-|4,39,149,5,1617260220,"~/OperatingSystem/hw2/pctest.c"
--'  155  10  ~/OperatingSystem/hw2/pctest.c
-|4,39,155,10,1617260220,"~/OperatingSystem/hw2/pctest.c"
--'  149  5  ~/OperatingSystem/hw2/pctest.c
-|4,39,149,5,1617260220,"~/OperatingSystem/hw2/pctest.c"
--'  155  10  ~/OperatingSystem/hw2/pctest.c
-|4,39,155,10,1617260220,"~/OperatingSystem/hw2/pctest.c"
--'  149  5  ~/OperatingSystem/hw2/pctest.c
-|4,39,149,5,1617260220,"~/OperatingSystem/hw2/pctest.c"
--'  155  10  ~/OperatingSystem/hw2/pctest.c
-|4,39,155,10,1617260220,"~/OperatingSystem/hw2/pctest.c"
--'  149  5  ~/OperatingSystem/hw2/pctest.c
-|4,39,149,5,1617260220,"~/OperatingSystem/hw2/pctest.c"
--'  155  10  ~/OperatingSystem/hw2/pctest.c
-|4,39,155,10,1617260220,"~/OperatingSystem/hw2/pctest.c"
--'  149  5  ~/OperatingSystem/hw2/pctest.c
-|4,39,149,5,1617260220,"~/OperatingSystem/hw2/pctest.c"
--'  155  10  ~/OperatingSystem/hw2/pctest.c
-|4,39,155,10,1617260220,"~/OperatingSystem/hw2/pctest.c"
--'  149  5  ~/OperatingSystem/hw2/pctest.c
-|4,39,149,5,1617260220,"~/OperatingSystem/hw2/pctest.c"
--'  155  10  ~/OperatingSystem/hw2/pctest.c
-|4,39,155,10,1617260220,"~/OperatingSystem/hw2/pctest.c"
--'  149  5  ~/OperatingSystem/hw2/pctest.c
-|4,39,149,5,1617260220,"~/OperatingSystem/hw2/pctest.c"
--'  155  10  ~/OperatingSystem/hw2/pctest.c
-|4,39,155,10,1617260220,"~/OperatingSystem/hw2/pctest.c"
--'  149  5  ~/OperatingSystem/hw2/pctest.c
-|4,39,149,5,1617260220,"~/OperatingSystem/hw2/pctest.c"
--'  144  10  ~/OperatingSystem/hw2/pctest.c
-|4,39,144,10,1617260219,"~/OperatingSystem/hw2/pctest.c"
--'  142  5  ~/OperatingSystem/hw2/pctest.c
-|4,39,142,5,1617260219,"~/OperatingSystem/hw2/pctest.c"
--'  145  10  ~/OperatingSystem/hw2/pctest.c
-|4,39,145,10,1617260219,"~/OperatingSystem/hw2/pctest.c"
--'  143  5  ~/OperatingSystem/hw2/pctest.c
-|4,39,143,5,1617260219,"~/OperatingSystem/hw2/pctest.c"
--'  144  10  ~/OperatingSystem/hw2/pctest.c
-|4,39,144,10,1617260219,"~/OperatingSystem/hw2/pctest.c"
--'  142  5  ~/OperatingSystem/hw2/pctest.c
-|4,39,142,5,1617260219,"~/OperatingSystem/hw2/pctest.c"
--'  145  10  ~/OperatingSystem/hw2/pctest.c
-|4,39,145,10,1617260219,"~/OperatingSystem/hw2/pctest.c"
--'  143  5  ~/OperatingSystem/hw2/pctest.c
-|4,39,143,5,1617260219,"~/OperatingSystem/hw2/pctest.c"
--'  145  10  ~/OperatingSystem/hw2/pctest.c
-|4,39,145,10,1617260219,"~/OperatingSystem/hw2/pctest.c"
--'  143  5  ~/OperatingSystem/hw2/pctest.c
-|4,39,143,5,1617260219,"~/OperatingSystem/hw2/pctest.c"
 
 # History of marks within files (newest to oldest):
+
+> ~/OperatingSystem/hw2/README.md
+	*	1617279357	0
+	"	3	3
+	^	3	4
+	.	4	0
+	+	2	57
+	+	5	12
+	+	2	6
+	+	2	7
+	+	3	0
+	+	5	15
+	+	47	13
+	+	46	88
+	+	2	65
+	+	1	56
+	+	3	22
+	+	4	2
+	+	5	17
+	+	46	99
+	+	47	15
+	+	6	93
+	+	7	156
+	+	7	0
+	+	7	141
+	+	8	155
+	+	10	118
+	+	10	7
+	+	10	131
+	+	9	4
+	+	28	0
+	+	30	25
+	+	28	25
+	+	29	3
+	+	28	25
+	+	24	3
+	+	26	5
+	+	24	5
+	+	27	3
+	+	22	24
+	+	12	0
+	+	22	3
+	+	12	229
+	+	12	129
+	+	12	54
+	+	16	385
+	+	16	168
+	+	17	107
+	+	19	4
+	+	15	33
+	+	38	146
+	+	39	59
+	+	40	3
+	+	44	4
+	+	42	1
+	+	45	57
+	+	46	78
+	+	46	44
+	+	46	78
+	+	36	24
+	+	37	5
+	+	46	78
+	+	47	0
+	+	19	105
+	+	20	277
+	+	20	85
+	+	21	4
+	+	22	0
+	+	28	0
+	+	47	20
+	+	47	0
+	+	32	86
+	+	33	70
+	+	32	88
+	+	35	0
+	+	33	71
+	+	35	0
+	+	47	0
+	+	4	0
 
 > ~/OperatingSystem/hw2/pctest.c
 	*	1617279124	0
@@ -563,84 +642,6 @@ $
 	+	9	21
 	+	5	16
 	+	9	22
-
-> ~/OperatingSystem/hw2/README.md
-	*	1617120072	0
-	"	48	0
-	^	48	0
-	.	47	0
-	+	2	57
-	+	5	12
-	+	2	6
-	+	2	7
-	+	3	0
-	+	5	15
-	+	47	13
-	+	46	88
-	+	2	65
-	+	1	56
-	+	3	22
-	+	4	2
-	+	5	17
-	+	46	99
-	+	47	15
-	+	6	93
-	+	7	156
-	+	7	0
-	+	7	141
-	+	8	155
-	+	10	118
-	+	10	7
-	+	10	131
-	+	9	4
-	+	28	0
-	+	30	25
-	+	28	25
-	+	29	3
-	+	28	25
-	+	24	3
-	+	26	5
-	+	24	5
-	+	27	3
-	+	22	24
-	+	12	0
-	+	22	3
-	+	12	229
-	+	12	129
-	+	12	54
-	+	16	385
-	+	16	168
-	+	17	107
-	+	19	4
-	+	15	33
-	+	38	146
-	+	39	59
-	+	40	3
-	+	44	4
-	+	42	1
-	+	45	57
-	+	46	78
-	+	46	44
-	+	46	78
-	+	36	24
-	+	37	5
-	+	46	78
-	+	47	0
-	+	19	105
-	+	20	277
-	+	20	85
-	+	21	4
-	+	22	0
-	+	28	0
-	+	47	20
-	+	47	0
-	+	32	86
-	+	33	70
-	+	32	88
-	+	35	0
-	+	33	71
-	+	35	0
-	+	47	0
 
 > ~/OperatingSystem/hw2/p.c
 	*	1617115606	0

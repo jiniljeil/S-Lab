@@ -1,6 +1,6 @@
 PCTest: Multi-processed Programming Assignment Testers   
 ###### Write-up: (Operating System Section 1) 21900195 Jinil Kim  
-====================   
+    
    
 ## Introduction   
 This program named PCTest that verifies the target source file outputs the correct results.  
