@@ -4,18 +4,11 @@
 #include <assert.h> 
 #include "rmalloc.h" 
 
-/*
-struct _rm_header {
-	struct _rm_header * next ;
-	size_t size ;
-} ;
-*/
 rm_header rm_free_list = { 0x0, 0 } ;
 rm_header rm_used_list = { 0x0, 0 } ;
 rm_option curr_status = FirstFit; // Default
 void * memory_space = NULL ;
 void * first_s = NULL; 
-int num_of_pages ;  
 void * rmalloc (size_t s) 
 {
 	// TODO 
@@ -87,7 +80,6 @@ void * rmalloc (size_t s)
 			if( rm_used_list.next == 0x0){ 
 				used_node = (rm_header_ptr) mmap(NULL, n_pages * pagesize, PROT_READ | PROT_WRITE, MAP_ANON | MAP_PRIVATE, -1, 0);  // 0x20 MAP_ANON
 				first_s = used_node; 
-				num_of_pages += n_pages; 
 				memory_space = used_node; 
 				used_node->size = n_pages * pagesize - sizeof(rm_header); 
 				used_node->next = 0x0; 
@@ -103,7 +95,6 @@ void * rmalloc (size_t s)
 				// new_page 
 				used_node = (rm_header_ptr) mmap(memory_space + n_pages * pagesize, n_pages * pagesize, PROT_READ | PROT_WRITE, MAP_ANON | MAP_PRIVATE, -1, 0); 
 				memory_space = used_node; 		
-				num_of_pages += n_pages; 
 				used_node->size = n_pages * pagesize - sizeof(rm_header);
 				used_node->next = 0x0; 
 				rm_header_ptr i = rm_used_list.next; 
