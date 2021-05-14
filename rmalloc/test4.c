@@ -23,7 +23,10 @@ main ()
 	rfree(p1) ; 
 	printf("rfree(%p)\n", p1) ; 
 	rmprint() ;
-
+	
+	rmshrink(); 
+	rmprint(); 
+	
 	p3 = rmalloc(1000) ; 
 	printf("rmalloc(1000):%p\n", p3) ; 
 	rmprint() ;

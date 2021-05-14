@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "rmalloc.h" 
+#include "smalloc.h" 
 
 typedef 
-struct node {
-	int num ;
-	struct node * next ;
-} 
-Node ;
+	struct node {
+		int num ;
+		struct node * next ;
+	} 
+	Node ;
+
 Node list ;
 
 int
@@ -28,7 +29,7 @@ insert_number(int num)
 	if (is_contained(num))
 		return ;
 
-	Node * n = (Node *) rmalloc(sizeof(Node)) ;
+	Node * n = (Node *) smalloc(sizeof(Node)) ;
 	n->num = num ;
 	n->next = list.next ;
 	list.next = n ;
@@ -52,7 +53,7 @@ remove_number(int num)
 	for (itr = &list ; itr->next != 0x0 ; itr = itr->next) {
 		if (itr->next->num == num) {
 			Node * nextnext = itr->next->next ;
-			rfree(itr->next) ;
+			sfree(itr->next) ;
 			itr->next = nextnext ;
 			break ;
 		}
@@ -80,7 +81,7 @@ main()
 	}
 	print_numbers() ;
 	
-	rmprint() ;
+	print_sm_containers() ;
 
 	exit(0) ;
 }

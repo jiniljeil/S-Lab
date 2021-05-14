@@ -4,6 +4,12 @@
 #include <assert.h> 
 #include "rmalloc.h" 
 
+/*
+struct _rm_header {
+	struct _rm_header * next ;
+	size_t size ;
+} ;
+*/
 rm_header rm_free_list = { 0x0, 0 } ;
 rm_header rm_used_list = { 0x0, 0 } ;
 rm_option curr_status = FirstFit; // Default
