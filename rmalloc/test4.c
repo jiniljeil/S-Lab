@@ -5,7 +5,7 @@ int
 main ()
 {
 	void *p1, *p2, *p3, *p4 ;
-	
+	rmconfig(WorstFit); 
 	rmprint() ;
 
 	p1 = rmalloc(2000) ; 
@@ -24,8 +24,8 @@ main ()
 	printf("rmshrink()\n");
 	rmprint(); 
 	
-	p3 = rmalloc(1000) ; 
-	printf("rmalloc(1000):%p\n", p3) ; 
+	p3 = rmalloc(2000) ; 
+	printf("rmalloc(2000):%p\n", p3) ; 
 	rmprint() ;
 
 	p4 = rmalloc(1000) ; 

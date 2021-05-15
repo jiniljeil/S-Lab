@@ -65,7 +65,7 @@ main()
 {
 	int input ;
 	list.next = 0x0 ;
-
+	
 	while (1) {
 		scanf("%d", &input) ;
 		if (input == 0) {

@@ -156,6 +156,7 @@ void rfree (void * p)
 		else {prev = prev->next;}
 	} 
 	// ASSERT FUNCTION
+	// If value of the free_check variable is '0', the address of p is invalid or is already freed. 
 	assert(free_check == '1'); 
 }
 
