@@ -21,6 +21,7 @@ main ()
 	rmprint() ;
 	
 	rmshrink(); // shrink
+	printf("rmshrink()\n");
 	rmprint(); 
 	
 	p3 = rmalloc(1000) ; 
